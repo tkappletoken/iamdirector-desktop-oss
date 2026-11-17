@@ -27,7 +27,7 @@ jobs:
           - { os: win, arch: arm64, runner: windows-11-arm }
           - { os: mac, arch: x64, runner: macos-15 }
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - uses: actions/setup-node@v4

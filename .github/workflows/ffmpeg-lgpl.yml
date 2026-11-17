@@ -25,7 +25,7 @@ jobs:
     name: Windows x64（mingw 交叉編譯，MediaFoundation）
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
@@ -53,7 +53,7 @@ jobs:
     name: Linux x64（VP9／Opus，H.264 執行時向 Cisco 下載）
     runs-on: ubuntu-22.04          # 用舊一點的 glibc 編，裝得進比較多發行版
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
@@ -84,7 +84,7 @@ jobs:
       matrix:
         arch: [arm64, x86_64]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
