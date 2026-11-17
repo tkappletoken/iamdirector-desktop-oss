@@ -42,7 +42,7 @@ jobs:
         run: |
           if [ -f vendor/ffmpeg-win-x64/ffmpeg.exe ]; then echo "快取命中"; else bash scripts/build-ffmpeg-lgpl-mingw.sh; fi
           ls -la vendor/ffmpeg-win-x64
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-win-x64
           path: vendor/ffmpeg-win-x64
@@ -69,7 +69,7 @@ jobs:
         run: |
           if [ -f vendor/ffmpeg-linux-x64/ffmpeg ]; then echo "快取命中"; else bash scripts/build-ffmpeg-lgpl-linux.sh; fi
           ls -la vendor/ffmpeg-linux-x64
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-linux-x64
           path: vendor/ffmpeg-linux-x64
@@ -101,7 +101,7 @@ jobs:
           D=vendor/ffmpeg-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}
           if [ -f "$D/ffmpeg" ]; then echo "快取命中"; else bash scripts/build-ffmpeg-lgpl.sh ${{ matrix.arch }}; fi
           ls -la "$D"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ffmpeg-mac-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}
           path: vendor/ffmpeg-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}
