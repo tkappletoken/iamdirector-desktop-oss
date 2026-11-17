@@ -30,7 +30,7 @@ jobs:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
       - name: 快取原始碼與成品
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             vendor/.cache
@@ -57,7 +57,7 @@ jobs:
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             vendor/.cache
@@ -88,7 +88,7 @@ jobs:
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             vendor/.cache
